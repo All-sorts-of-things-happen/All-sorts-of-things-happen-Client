@@ -1,4 +1,19 @@
+@font-face {
+    font-family: 'SeoulNamsanM';
+    src: url('/public/fonts/SeoulNamsanL.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('/public/fonts/PretendardVariable.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
+    font-family:'Pretendard';
     padding: 0;
     margin: 0;
 }
@@ -17,6 +32,7 @@ input {
     justify-content: center;
 }
 .Login > p {
+    font-family: 'SeoulNamsanM';
     color: #f8c201;
     font-size: 40px;
     margin-bottom: 40px;
