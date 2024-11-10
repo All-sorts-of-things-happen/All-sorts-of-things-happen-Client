@@ -1,8 +1,8 @@
 import React from 'react';
 import { GoogleOAuthProvider } from '@react-oauth/google';
-import './Login.css';
-import LoginButton from './Google';
-import { clientId } from './config';  // clientId 가져오기
+import '../styles/Login.css';
+import LoginButton from '../pages/Google';
+import { clientId } from '../pages/config';  // clientId 가져오기
 
 function Login() {
     return (
