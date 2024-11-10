@@ -1,0 +1,64 @@
+@font-face {
+    font-family: 'Pretendard';
+    src: url('/public/fonts/PretendardVariable.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    font-family: 'Pretendard'
+}
+
+.all-container {
+    position: relative;
+}
+
+.title {
+    height: 70px;
+    border-bottom: 2px solid black;
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+    color: #FFF;
+    font-weight: 600;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+main {
+    display: flex;
+    margin-left: 50px;  
+    /* 이 margin-left 준 거 수정해야 함 */
+    justify-content: flex-start;
+    height: auto;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 15%;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 10px 25px;
+}
+
+section > p {
+    color: white;
+    display: flex;
+    width: 77px;
+    height: 22px;
+    padding: 11px 25px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    background: #464646;
+}
+
+section > img {
+    width: 178.886px;
+    height: 219.189px;
+    margin-bottom: 15px;
+}
