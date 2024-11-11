@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import MypageStyle from '../styles/Mypage.module.css';
 import BottomNav from '../components/BottomNav';
 
@@ -17,7 +18,9 @@ function Mypage() {
                 <section className={MypageStyle.myContainer}>
                     <img className={MypageStyle.profile} src='/images/profileImg.png'/>
                     <p className={MypageStyle.name}>김소정</p>
-                    <img className={MypageStyle.more} src='/images/moreImg.png'/>
+                    <Link to="/MypageMore">
+                        <img className={MypageStyle.more} src='/images/moreImg.png'/>
+                    </Link>
                 </section>
                 <p className={MypageStyle.myGoal}>나의 목표</p>
                 <section className={MypageStyle.goalContainer}>
