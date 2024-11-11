@@ -4,12 +4,12 @@
     font-weight: normal;
     font-style: normal;
 }
-body {
-    font-family: 'Pretendard'
-}
 
-.all-container {
+.allcontainer {
     position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #303030;
 }
 
 .title {
@@ -26,9 +26,9 @@ body {
     right: 0;
 }
 
-main {
+.StarDicmain {
     display: flex;
-    margin-left: 50px;  
+    margin-left: 25px;  
     /* 이 margin-left 준 거 수정해야 함 */
     justify-content: flex-start;
     height: auto;
@@ -37,14 +37,17 @@ main {
     top: 15%;
 }
 
-section {
+.first-image,
+.second-image,
+.third-image {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 10px 10px 25px;
 }
 
-section > p {
+.StarDicp {
+    box-sizing: content-box;
     color: white;
     display: flex;
     width: 77px;
@@ -57,8 +60,8 @@ section > p {
     background: #464646;
 }
 
-section > img {
-    width: 178.886px;
-    height: 219.189px;
-    margin-bottom: 15px;
+.StarDicimg {
+    width: 149.886px; /* 필요에 따라 조정 */
+    height: 190.189px; /* 필요에 따라 조정 */
+    margin-bottom: 15px; /* 필요에 따라 조정 */
 }
