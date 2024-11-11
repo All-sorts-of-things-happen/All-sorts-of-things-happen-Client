@@ -1,14 +1,16 @@
 import React from 'react';
-import '../styles/MypageMore.css';
+import MypageMoreStyle from '../styles/MypageMore.module.css';
 
 function MypageMore() {
 
     return(
-        <div className='Mypage'>
+        <div className={MypageMoreStyle.MypageMore}>
             <header>
-                <p className='my-page'>마이페이지</p>
+                <p className={MypageMoreStyle.myPage}>마이페이지</p>
             </header>
-            <img className='logout' src='/images/logoutImg.png'/>
+            <div>
+                <img className={MypageMoreStyle.logout} src='/images/logoutImg.png'/>
+            </div>
         </div>
     );
 }
