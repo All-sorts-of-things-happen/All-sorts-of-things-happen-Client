@@ -1,29 +1,28 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import '../styles/StarDic.css'; // CSS 파일 import
+import StarDicStyle from '../styles/StarDic.module.css'; // CSS 모듈 import
 import BottomNav from '../components/BottomNav'; // BottomNav import
 
 function StarDic() {
     return (
-        <div className="all-container">
-            <BottomNav />
-            <header>
-                <p className="title">별 도감</p>
+        <div className={StarDicStyle.allcontainer}>
+            <header className={StarDicStyle.StarDicHeader}>
+                <p className={StarDicStyle.title}>별 도감</p>
             </header>
-            <main>
-                <section className="first-image">
-                    <img src="/images/stardic.png" alt="First Star" />
-                    <p>살 5kg 감량</p>
+            <main className={StarDicStyle.StarDicmain}>
+                <section className={StarDicStyle['first-image']}>
+                    <img className={StarDicStyle.StarDicimg} src="/images/stardic.png" alt="First Star" />
+                    <p className={StarDicStyle.StarDicp}>살 5kg 감량</p>
                 </section>
-                <section className="second-image">
-                    <img src="/images/stardic.png" alt="Second Star" />
-                    <p>살 5kg 감량</p>
+                <section className={StarDicStyle['second-image']}>
+                    <img className={StarDicStyle.StarDicimg} src="/images/stardic.png" alt="Second Star" />
+                    <p className={StarDicStyle.StarDicp}>살 5kg 감량</p>
                 </section>
-                <section className="third-image">
-                    <img src="/images/stardic.png" alt="Third Star" />
-                    <p>살 5kg 감량</p>
+                <section className={StarDicStyle['third-image']}>
+                    <img className={StarDicStyle.StarDicimg} src="/images/stardic.png" alt="Third Star" />
+                    <p className={StarDicStyle.StarDicp}>살 5kg 감량</p>
                 </section>
             </main>
+            <BottomNav />
         </div>
     );
 }
