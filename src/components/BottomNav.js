@@ -1,25 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/BottomNav.css';
+import BottomNavStyle from '../styles/BottomNav.module.css';
 
 function BottomNav() {
     return (
         <div className="all-container">
-            <nav className="bottom-nav">
+            <nav className={BottomNavStyle.bottomNav}>
                 <ul>
                     <li>
                         <Link to="/">
-                            <img src="/images/book.png" alt="Book" className="book-icon"/>
+                            <img src="/images/book.png" alt="Book" className={BottomNavStyle.bottomNavImg}/>
                         </Link>
                     </li>
                     <li>
                         <Link to="/">
-                            <img src="/images/star.png" alt="Star" />
+                            <img src="/images/star.png" alt="Star" className={BottomNavStyle.bottomNavImg}/>
                         </Link>
                     </li>
                     <li>
                         <Link to="/">
-                            <img src="/images/person.png" alt="Persons" />
+                            <img src="/images/person.png" alt="Persons" className={BottomNavStyle.bottomNavImg}/>
                         </Link>
                     </li>
                 </ul>
