@@ -9,20 +9,20 @@
     height: 100vh;
     background-color: #303030;
 }
-.my-page {
+.myPage {
     height: 70px;
     border-bottom: 2px solid black;
     display: grid;
     place-items: center;
     font-size: 20px;
 }
-main {
+.main {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.my-container {
+.myContainer {
     display: flex;
     width: 322px;
     height: 100px;
@@ -47,11 +47,11 @@ main {
     width: 4px;
     height: 18px;
 }
-.my-goal {
+.myGoal {
     width: 322px;
     font-size: 22px;
 }
-.goal-container {
+.goalContainer {
     width: 322px;
     height: 300px;
     display: flex;
@@ -59,7 +59,7 @@ main {
     overflow-y: auto;
     margin: 19px 0 14px;
 }
-.goal-container::-webkit-scrollbar {
+.goalContainer::-webkit-scrollbar {
     display: none; 
 }
 .goal {
@@ -77,7 +77,7 @@ main {
     padding: 24px 0;
     margin-bottom: 19px;
 }
-.goal-more {
+.goalMore {
     width: 32px;
     height: 42px;
 }
