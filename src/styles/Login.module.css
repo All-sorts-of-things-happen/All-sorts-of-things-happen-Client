@@ -17,7 +17,7 @@
     padding: 0;
     margin: 0;
 }
-input {
+.loginContainer input {
     box-shadow: none;     
     outline: none;        
     border: none;
@@ -37,25 +37,25 @@ input {
     font-size: 40px;
     margin-bottom: 40px;
 }
-.login-container {
+.loginContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.login-container label {
+.loginContainer label {
     padding: 5px 15px;
     border-radius: 10px;
     border: 2px solid #ecf961;
     margin-bottom: 20px;
 }
-.login-container input {
+.loginContainer input {
     width: 300px;
     height: 40px;
     font-size: 18px;
     background-color: #303030;
     color: white;
 }
-.login-btn {
+.loginBtn {
     width: 180px;
     height: 50px;
     border-radius: 50px;
@@ -90,7 +90,7 @@ input {
     color: #c3c3c3;
     margin: 0 10px;
 }
-.login-google {
+.loginGoogle {
     width: 334px;
     height: 50px;
     margin-top: 50px;

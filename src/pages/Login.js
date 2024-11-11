@@ -1,29 +1,29 @@
 import React from 'react';
 import { GoogleOAuthProvider } from '@react-oauth/google';
-import '../styles/Login.css';
+import LoginStyle from '../styles/Login.module.css';
 import LoginButton from '../pages/Google';
 import { clientId } from '../pages/config';  // clientId 가져오기
 
 function Login() {
     return (
         <GoogleOAuthProvider clientId={clientId}>
-            <div className="Login">
+            <div className={LoginStyle.Login}>
                 <p>별일 다 있어</p>
-                <div className="login-container">
+                <div className={LoginStyle.loginContainer}>
                     <label>
                         <input name="email" placeholder="이메일 작성하기" />
                     </label>
                     <label>
                         <input name="password" placeholder="비밀번호 작성하기" />
                     </label>
-                    <button className="login-btn">로그인</button>
+                    <button className={LoginStyle.loginBtn}>로그인</button>
                 </div>
-                <div className="line">
+                <div className={LoginStyle.line}>
                     <div></div>
                     <p>로그인 및 회원가입 하기</p>
                     <div></div>
                 </div>
-                <div className="login-google">
+                <div className={LoginStyle.loginGoogle}>
                     <LoginButton /> {/* 구글 로그인 버튼 */}
                 </div>
             </div>
