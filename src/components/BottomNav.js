@@ -13,12 +13,12 @@ function BottomNav() {
                         </Link>
                     </li>
                     <li>
-                        <Link to="/Mypage">
+                        <Link to="/">
                             <img src="/images/star.png" alt="Star" className={BottomNavStyle.bottomNavImg}/>
                         </Link>
                     </li>
                     <li>
-                        <Link to="/Mypage">
+                        <Link to="/">
                             <img src="/images/person.png" alt="Persons" className={BottomNavStyle.bottomNavImg}/>
                         </Link>
                     </li>
