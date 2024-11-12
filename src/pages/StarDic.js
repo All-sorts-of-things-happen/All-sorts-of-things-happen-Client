@@ -14,12 +14,12 @@ function StarDic() {
                     <p className={StarDicStyle.StarDicp}>살 5kg 감량</p>
                 </section>
                 <section className={StarDicStyle['second-image']}>
-                    <img className={StarDicStyle.StarDicimg} src="/images/stardic.png" alt="Second Star" />
-                    <p className={StarDicStyle.StarDicp}>살 5kg 감량</p>
+                    <img className={StarDicStyle.StarDicimg} src="/images/stardic2.png" alt="Second Star" />
+                    <p className={StarDicStyle.StarDicp}>수학 90점</p>
                 </section>
                 <section className={StarDicStyle['third-image']}>
-                    <img className={StarDicStyle.StarDicimg} src="/images/stardic.png" alt="Third Star" />
-                    <p className={StarDicStyle.StarDicp}>살 5kg 감량</p>
+                    <img className={StarDicStyle.StarDicimg} src="/images/stardic3.png" alt="Third Star" />
+                    <p className={StarDicStyle.StarDicp}>자격증 따기</p>
                 </section>
             </main>
             <BottomNav />
