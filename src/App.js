@@ -1,20 +1,19 @@
 import React from 'react';
-import { Routes, Route } from "react-router-dom";
-import BottomNav from "./components/BottomNav";
-import Login from './pages/Login';
+import { Routes, Route } from 'react-router-dom';
+import Mypage from './pages/Mypage';
+import MypageMore from './pages/MypageMore';
+import StarDic from './pages/StarDic';
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <Routes>
-        {/* 기본 경로에서 로그인 페이지를 보이도록 설정 */}
-        <Route path="/login" element={<Login />} /> {/* 로그인 페이지 */}
-        <Route path="/" element={<Login />} /> {/* 기본 경로에서도 로그인 페이지 */}
-        <Route path="/bottomnav" element={<BottomNav />} /> {/* BottomNav 페이지 */}
-        {/* 다른 라우트들을 여기에 추가 */}
+        <Route path="/StarDic" element={<StarDic />} />
+        <Route path="/Mypage" element={<Mypage />} />
+        <Route path="/MypageMore" element={<MypageMore />} />
       </Routes>
     </div>
-  );
+  ); 
 }
 
 export default App;

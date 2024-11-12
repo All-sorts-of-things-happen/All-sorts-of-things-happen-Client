@@ -8,7 +8,7 @@ function BottomNav() {
             <nav className={BottomNavStyle.bottomNav}>
                 <ul>
                     <li>
-                        <Link to="/">
+                        <Link to="/StarDic">
                             <img src="/images/book.png" alt="Book" className={BottomNavStyle.bottomNavImg}/>
                         </Link>
                     </li>
@@ -18,7 +18,7 @@ function BottomNav() {
                         </Link>
                     </li>
                     <li>
-                        <Link to="/">
+                        <Link to="/Mypage">
                             <img src="/images/person.png" alt="Persons" className={BottomNavStyle.bottomNavImg}/>
                         </Link>
                     </li>
