@@ -32,7 +32,7 @@
 .StarDicmain {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2열로 설정 */
-    gap: 20px; /* 열과 행 사이에 20px 간격 추가 */
+    gap: 15px; /* 열과 행 사이에 20px 간격 추가 */
     justify-content: center;
     align-items: start;
 }
@@ -63,7 +63,7 @@
 }
 
 .StarDicimg {
-    width: 149.886px; /* 필요에 따라 조정 */
-    height: 190.189px; /* 필요에 따라 조정 */
+    width: 185.886px; /* 필요에 따라 조정 */
+    height: 226.189px; /* 필요에 따라 조정 */
     margin-bottom: 15px; /* 필요에 따라 조정 */
 }

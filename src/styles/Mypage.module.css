@@ -1,7 +1,15 @@
+@font-face {
+    font-family: 'Pretendard';
+    src: url('/public/fonts/PretendardVariable.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Pretendard';
 }
 .Mypage {
     width: 100%;
