@@ -10,6 +10,9 @@
     width: 100%;
     height: 100vh;
     background-color: #303030;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .title {
@@ -27,15 +30,13 @@
 }
 
 .StarDicmain {
-    display: flex;
-    margin-left: 25px;  
-    /* 이 margin-left 준 거 수정해야 함 */
-    justify-content: flex-start;
-    height: auto;
-    flex-wrap: wrap;
-    position: absolute;
-    top: 15%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2열로 설정 */
+    gap: 20px; /* 열과 행 사이에 20px 간격 추가 */
+    justify-content: center;
+    align-items: start;
 }
+
 
 .first-image,
 .second-image,
@@ -47,10 +48,11 @@
 }
 
 .StarDicp {
+    font-family: 'Pretendard';
     box-sizing: content-box;
     color: white;
     display: flex;
-    width: 77px;
+    width: 79px;
     height: 22px;
     padding: 11px 25px;
     justify-content: center;
