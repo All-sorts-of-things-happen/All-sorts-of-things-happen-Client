@@ -1,14 +1,13 @@
 import React from 'react';
 import MainpageStyle from '../styles/Mainpage.module.css'; // CSS 모듈 import
-import BottomNav from '../components/BottomNav'; // BottomNav import
 
-function StarDic() {
+function Mainpage() {
     return (
-        <div className={StarDicStyle.allcontainer}>
-            <header className={StarDicStyle.StarDicHeader}>
-                <p className={StarDicStyle.title}>별 도감</p>
+        <div className={MainpageStyle.allcontainer}>
+            <header className={MainpageStyle.StarDicHeader}>
+                <p className={MainpageStyle.title}>별자리</p>
             </header>
-            <main className={StarDicStyle.StarDicmain}>
+            <main className={MainpageStyle.StarDicmain}>
                 <section className={StarDicStyle['first-image']}>
                     <img className={StarDicStyle.StarDicimg} src="/images/stardic.png" alt="First Star" />
                     <p className={StarDicStyle.StarDicp}>살 5kg 감량</p>
@@ -27,4 +26,4 @@ function StarDic() {
     );
 }
 
-export default StarDic;
+export default Mainpage;
