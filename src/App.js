@@ -9,7 +9,7 @@ function App() {
     <div className='App'>
       <Routes>
         <Route path="/StarDic" element={<StarDic />} />
-        <Route path="/Mypage" element={<Mypage />} />
+        <Route path="/" element={<Mypage />} />
         <Route path="/MypageMore" element={<MypageMore />} />
       </Routes>
     </div>
