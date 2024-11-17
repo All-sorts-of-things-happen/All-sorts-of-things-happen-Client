@@ -107,6 +107,14 @@ function Mainpage() {
                 <h3>
         장기목표
         <FiEdit size={16} className={MainpageStyle.editIcon} />
+        <svg width="100%" height="100%" viewBox="0 0 344 405" className={MainpageStyle.lineContainer}>
+            <line x1="18.5px" y1="55px" x2="18.5px" y2="80px" stroke="#F2FF62" strokeWidth="1"  className={MainpageStyle.Line1}/>
+            <line x1="18.5px" y1="86.5px" x2="18.5px" y2="111.5px" stroke="#F2FF62" strokeWidth="1"  className={MainpageStyle.Line2}/>
+            <line x1="18.5px" y1="118.5px" x2="18.5px" y2="143px" stroke="#F2FF62" strokeWidth="1"  className={MainpageStyle.Line3}/>
+            <line x1="18.5px" y1="150px" x2="18.5px" y2="174.5px" stroke="#F2FF62" strokeWidth="1"  className={MainpageStyle.Line4}/>
+            <line x1="18.5px" y1="181.6px" x2="18.5px" y2="206.5px" stroke="#F2FF62" strokeWidth="1"  className={MainpageStyle.Line5}/>
+            <line x1="18.5px" y1="213.5px" x2="18.5px" y2="238px" stroke="#F2FF62" strokeWidth="1"  className={MainpageStyle.Line6}/>
+        </svg>
     </h3>
     <div className={MainpageStyle.goalTitle}>살 5kg 감량</div>
     <div className={MainpageStyle.progress}>
