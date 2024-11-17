@@ -18,7 +18,7 @@ function BottomNav() {
                         </Link>
                     </li>
                     <li>
-                        <Link to="/">
+                        <Link to="/Mypage">
                             <img src="/images/person.png" alt="Persons" className={BottomNavStyle.bottomNavImg}/>
                         </Link>
                     </li>
