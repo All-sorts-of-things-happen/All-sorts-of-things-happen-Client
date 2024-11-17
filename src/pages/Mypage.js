@@ -17,7 +17,7 @@ function Mypage() {
             <main className={MypageStyle.main}>
                 <section className={MypageStyle.myContainer}>
                     <img className={MypageStyle.profile} src='/images/profileImg.png'/>
-                    <p className={MypageStyle.name}>김소정</p>
+                    <p className={MypageStyle.name}>김미림</p>
                     <Link to="/MypageMore">
                         <img className={MypageStyle.more} src='/images/moreImg.png'/>
                     </Link>
@@ -25,18 +25,16 @@ function Mypage() {
                 <p className={MypageStyle.myGoal}>나의 목표</p>
                 <section className={MypageStyle.goalContainer}>
                     <div className={`${MypageStyle.goal} ${MypageStyle.this}`}>살 5kg 감량</div>
-                    <div className={MypageStyle.goal}>살 5kg 감량</div>
-                    <div className={MypageStyle.goal}>살 5kg 감량</div>
-                    <div className={MypageStyle.goal}>살 5kg 감량</div>
-                    <div className={MypageStyle.goal}>살 5kg 감량</div>
-                    <div className={MypageStyle.goal}>살 5kg 감량</div>
-                    <div className={MypageStyle.goal}>살 5kg 감량</div>
-                    <div className={MypageStyle.goal}>살 5kg 감량</div>
-                    <div className={MypageStyle.goal}>살 5kg 감량</div>
-                    <div className={MypageStyle.goal}>살 5kg 감량</div>
-                    <div className={MypageStyle.goal}>살 5kg 감량</div>
-                    <div className={MypageStyle.goal}>살 5kg 감량</div>
-                    <div className={MypageStyle.goal}>살 5kg 감량</div>
+                    <div className={MypageStyle.goal}>주 3회 요가 하기</div>
+                    <div className={MypageStyle.goal}>주 1회 새로운 레시피 도전하기</div>
+                    <div className={MypageStyle.goal}>하루 한 끼는 채식</div>
+                    <div className={MypageStyle.goal}>하루 2L 물 마시기</div>
+                    <div className={MypageStyle.goal}>매일 일기 쓰기</div>
+                    <div className={MypageStyle.goal}>주 2회 취미 활동하기</div>
+                    <div className={MypageStyle.goal}>주말에 영화 한 편 보기</div>
+                    <div className={MypageStyle.goal}>하루 스마트폰 사용 2시간 이하</div>
+                    <div className={MypageStyle.goal}>주 1회 친구와 연락하기</div>
+                    <div className={MypageStyle.goal}>잠자기 30분 전 디지털 기기 끄기</div>
                 </section>
                 <div><img className={MypageStyle.goalMore} src='/images/goal-moreImg.png'/></div>
             </main>
