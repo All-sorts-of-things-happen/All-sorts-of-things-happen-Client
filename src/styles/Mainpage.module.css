@@ -133,45 +133,197 @@
     margin-top: -50px; /* 상단으로 이동 */
 }
 
+/* 하단 바 (Bottom Sheet) 스타일 */
 .bottomSheet {
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100%;
-    background: #303030;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.3);
-    height: 100px; /* 기본 높이 */
-    transition: height 0.3s ease;
-    z-index: 100;
+    right: 0;
+    height: 50%;
+    background-color: #434343;
+    border-radius: 20px 20px 0 0;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.7);
 }
 
 .bottomSheet.expanded {
-    height: 70%; /* 확장된 높이 */
+    transform: translateY(0);
 }
 
+/* 드래그 핸들 */
 .dragHandle {
-    width: 50px;
+    width: 40px;
     height: 5px;
-    background: #fff;
-    border-radius: 2.5px;
+    background-color: #555555;
+    border-radius: 5px;
     margin: 10px auto;
+    cursor: pointer;
 }
 
+/* 하단 바 내용 */
 .bottomContent {
     padding: 20px;
-    color: #fff;
-    overflow-y: auto; /* 콘텐츠가 넘칠 경우 스크롤 */
-    height: calc(100% - 30px); /* 핸들 높이 제외 */
+    color: white;
+    font-family: 'Pretendard', sans-serif;
 }
 
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* 반투명 오버레이 */
-    z-index: 90;
+/* 제목 및 수정 아이콘 */
+.bottomContent h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #aaaaaa;
+    font-weight: normal;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+.editIcon {
+    color: #5b5b58;
+    cursor: pointer;
+}
+
+/* 목표 제목 */
+.goalTitle {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* 진행률 스타일 */
+.progress {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.progressText {
+    font-size: 12px;
+    color: #aaaaaa;
+}
+
+.progressBar {
+    flex: 1;
+    height: 6px;
+    background-color: #4a4a4a;
+    border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+}
+
+.progressFill {
+    height: 100%;
+    width: 30%; /* 진행률에 따라 조정 */
+    background-color: #f2ff62;
+    border-radius: 3px;
+    box-shadow: 0px 0px 5px rgba(242, 255, 98, 0.8);
+}
+
+/* 목록 스타일 */
+.goalList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* 요소 간격 */
+}
+
+.goalList li {
+    font-size: 14px;
+    color: #cccccc;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* 완료된 목표 스타일 */
+.completedGoalIcon {
+    color: #f2ff62;
+    fill: #f2ff62;
+    stroke: #f2ff62;
+    stroke-width: 2px;
+    filter: drop-shadow(0px 0px 29.6px rgba(238, 255, 37, 0.91));
+}
+
+/* 미완성된 목표 스타일 */
+.incompleteGoalIcon {
+    color: #4a4a4a;
+    fill: #4a4a4a;
+    stroke: #f2ff62;
+    stroke-width: 40px;
+}
+
+/* 진행률 바 컨테이너 */
+.progressContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* 진행률 바와 텍스트 사이 간격 */
+    margin-bottom: 20px;
+}
+
+.progressText {
+    font-size: 14px;
+    color: #aaaaaa;
+}
+
+.progressBar {
+    flex: 1;
+    height: 6px;
+    background-color: #5b5b58;
+    border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+}
+
+.progressBar .progress {
+    height: 100%;
+    width: 30%; /* 진행률 */
+    background-color: #f2ff62;
+    border-radius: 3px;
+}
+
+/* 목표 목록 */
+.goalList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.goalList li {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 14px;
+    color: #cccccc;
+    margin-bottom: 15px; /* 항목 간격 추가 */
+}
+
+/* 완료된 별 스타일 */
+.starCompleted {
+    filter: drop-shadow(0px 0px 29.6px rgba(238, 255, 37, 0.91));
+    margin-right: 10px;
+}
+
+/* 미완성 별 스타일 */
+.starIncomplete {
+    margin-right: 10px;
+}
+
+/* 완료된 목표 텍스트 */
+.completedGoal {
+    color: white;
+}
+
+/* 미완성 목표 텍스트 */
+.incompleteGoal {
+    color: #777777;
+    stroke-width: 2px;
+    stroke: #F2FF62;
+}
+
+

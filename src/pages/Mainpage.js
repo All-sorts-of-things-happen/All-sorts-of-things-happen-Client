@@ -7,12 +7,31 @@ import { FiEdit } from "react-icons/fi";
 
 function Mainpage() {
     const [isExpanded, setIsExpanded] = useState(false); // 하단 바 상태
-
+    const [dragPosition, setDragPosition] = useState(0); // 드래그 위치 상태
+  
     const handleExpand = () => setIsExpanded(true); // 하단 바 확장
     const handleCollapse = () => setIsExpanded(false); // 하단 바 축소
+  
+    // 터치 드래그 시작
+    const handleTouchMove = (event) => {
+      const touch = event.touches[0];
+      const screenHeight = window.innerHeight;
+      const newPosition = Math.max(0, screenHeight - touch.clientY);
+      setDragPosition(newPosition);
+    };
+  
+    // 터치 드래그 종료
+    const handleTouchEnd = () => {
+      if (dragPosition > window.innerHeight * 0.5) {
+        setIsExpanded(true); // 절반 이상 드래그 시 확장
+      } else {
+        setIsExpanded(false); // 절반 이하 드래그 시 축소
+      }
+      setDragPosition(0); // 드래그 상태 초기화
+    };
 
     return (
-        <div className={MainpageStyle.GoalStar}>
+        <div className={MainpageStyle.GoalStar} onClick={handleExpand}>
             <header>
                 <p className={MainpageStyle.goalstar}>별자리</p>
             </header>
@@ -21,6 +40,7 @@ function Mainpage() {
                 <div className={MainpageStyle.starsubtitle}><p>천칭자리</p></div>
                 <section className={MainpageStyle.per}><p>30%</p><div className={MainpageStyle.perline}><div></div></div></section>
                 <section className={MainpageStyle.starContainer}>
+                
                 <FaStar size={30} color='#F2FF62' className={MainpageStyle.star1}/>
                 <FaStar size={30} color='#F2FF62' className={MainpageStyle.star2}/>
                 <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31" fill="none"  className={MainpageStyle.star3}>
@@ -75,27 +95,56 @@ function Mainpage() {
                 className={`${MainpageStyle.bottomSheet} ${
                     isExpanded ? MainpageStyle.expanded : ""
                 }`}
-                onClick={!isExpanded ? handleExpand : undefined}
-            >
+                style={{
+                    transform: `translateY(${isExpanded ? 0 : 100}%)`, // 위치 조정
+                    transition: dragPosition === 0 ? "transform 0.3s ease" : "none", // 드래그 중엔 애니메이션 제거
+                }}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
+                >
                 <div className={MainpageStyle.dragHandle}></div>
                 <div className={MainpageStyle.bottomContent}>
-                    <h3>장기목표</h3>
-                    <p>살 5kg 감량</p>
-                    <p>물 하루에 1L 마시기</p>
-                    <p>30분 이상 홈트레이닝하기</p>
-                    <p>군것질하지 않기</p>
-                    <p>저녁은 6시 전에 먹기</p>
-                    <p>6시 이후 금식</p>
-                    <p>밥먹기 전에 물 마시기</p>
-                    <p>자기 전에 스쿼트 10개</p>
+                <h3>
+        장기목표
+        <FiEdit size={16} className={MainpageStyle.editIcon} />
+    </h3>
+    <div className={MainpageStyle.goalTitle}>살 5kg 감량</div>
+    <div className={MainpageStyle.progress}>
+        <span className={MainpageStyle.progressText}>30%</span>
+        <div className={MainpageStyle.progressBar}>
+            <div className={MainpageStyle.progressFill}></div> {/* 진행률 바 */}
+        </div>
+    </div>
+
+    <ul className={MainpageStyle.goalList}>
+        {/* 완료된 목표 */}
+        <li>
+            <FaStar size={14} className={MainpageStyle.completedGoalIcon} />
+            물 하루에 1L 마시기
+        </li>
+        <li>
+            <FaStar size={14} className={MainpageStyle.completedGoalIcon} />
+            30분 이상 홈트레이닝하기
+        </li>
+
+        {/* 미완성된 목표 */}
+        <li>
+            <FaStar size={14} className={MainpageStyle.incompleteGoalIcon} />
+            군것질하지 않기
+        </li>
+        <li>
+            <FaStar size={14} className={MainpageStyle.incompleteGoalIcon} />
+            저녁은 6시 전에 먹기
+        </li>
+    </ul>
                 </div>
-            </div>
-            {isExpanded && (
+                </div>
+                {isExpanded && (
                 <div
                     className={MainpageStyle.overlay}
                     onClick={handleCollapse}
                 ></div>
-            )}
+                )}
             </main>
             <BottomNav />
         </div>
