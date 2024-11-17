@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import LoginStyle from '../styles/Login.module.css';
 import LoginButton from '../pages/Google';
@@ -16,7 +17,9 @@ function Login() {
                     <label>
                         <input name="password" placeholder="비밀번호 작성하기" />
                     </label>
-                    <button className={LoginStyle.loginBtn}>로그인</button>
+                    <Link to='/Mainpage'>
+                        <button className={LoginStyle.loginBtn}>로그인</button>
+                    </Link>
                 </div>
                 <div className={LoginStyle.line}>
                     <div></div>
