@@ -28,6 +28,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: all 0.3s ease;
 }
 
 .starName {
@@ -64,7 +65,7 @@
     background-color: #5B5B58;
 }
 
-.perline > div {
+.perline>div {
     /* width: 30%; */
     height: 10px;
     border-radius: 46px;
@@ -87,13 +88,40 @@
     filter: drop-shadow(0px 0px 29.6px rgba(238, 255, 37, 0.91));
 }
 
-.star1 { left: 28.77906976744186%; top: 77.03703703703704%; }
-.star2 { left: 11.918604651162791%; top: 84.69135802469135%; }
-.star3 { left: 14.534883720930234%; top: 41.48148148148148%; }
-.star4 { left: 29.651162790697676%; top: 7.160493827160494%; }
-.star5 { left: 69.18604651162791%; top: 15.555555555555555%; }
-.star6 { left: 64.82558139534885%; top: 44.44444444444444%; }
-.star7 { left: 82.84883720930233%; top: 66.41975308641975%; }
+.star1 {
+    left: 28.77906976744186%;
+    top: 77.03703703703704%;
+}
+
+.star2 {
+    left: 11.918604651162791%;
+    top: 84.69135802469135%;
+}
+
+.star3 {
+    left: 14.534883720930234%;
+    top: 41.48148148148148%;
+}
+
+.star4 {
+    left: 29.651162790697676%;
+    top: 7.160493827160494%;
+}
+
+.star5 {
+    left: 69.18604651162791%;
+    top: 15.555555555555555%;
+}
+
+.star6 {
+    left: 64.82558139534885%;
+    top: 44.44444444444444%;
+}
+
+.star7 {
+    left: 82.84883720930233%;
+    top: 66.41975308641975%;
+}
 
 .lineContainer {
     position: absolute;
@@ -119,77 +147,72 @@
     margin-top: 180px;
 }
 
-.GoalStar {
-    position: relative;
-    overflow: hidden;
-}
-
-.main {
-    transition: all 0.3s ease;
-}
-
 .main.shrink {
-    transform: scale(0.9); /* 상단 UI 크기 줄이기 */
-    margin-top: -50px; /* 상단으로 이동 */
+    transform: scale(0.9);
+    margin-top: -50px;
 }
 
-/* 하단 바 (Bottom Sheet) 스타일 */
-/* 하단 바 스타일 */
 .bottomSheet {
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 50%; /* 기본 높이 */
+    height: 50%;
+    /* 기본 높이 */
     background-color: #434343;
     border-radius: 20px 20px 0 0;
     transform: translateY(100%);
     transition: transform 0.3s ease;
     z-index: 1000;
     box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.7);
-  }
-  
-  /* 하단 바 확장 상태 */
-  .bottomSheet.expanded {
+}
+
+.bottomSheet.expanded {
     transform: translateY(0);
-    height: 80%; /* 확장 시 높이 */
-  }
-  
-  /* 드래그 핸들 */
-  .dragHandle {
+    height: 80%;
+}
+
+/* 드래그 핸들 */
+.dragHandle {
     width: 40px;
     height: 5px;
     background-color: #555555;
     border-radius: 5px;
     margin: 10px auto;
     cursor: pointer;
-  }
-  
-  /* 하단 바 내용 */
-  .bottomContent {
+}
+
+/* 하단 바 내용 */
+.bottomContent {
     padding: 20px;
     color: white;
     font-family: 'Pretendard', sans-serif;
-    max-height: calc(100% - 40px); /* 하단 바 내에서 스크롤 가능한 최대 높이 */
-    overflow-y: auto; /* 세로 스크롤 활성화 */
-  }
-  
-  /* 스크롤바 스타일 (선택 사항) */
-  .bottomContent::-webkit-scrollbar {
-    width: 8px; /* 스크롤바 너비 */
-  }
-  
-  .bottomContent::-webkit-scrollbar-thumb {
-    background: #5b5b58; /* 스크롤바 색상 */
-    border-radius: 4px; /* 스크롤바 둥근 모서리 */
-  }
-  
-  .bottomContent::-webkit-scrollbar-thumb:hover {
-    background: #777777; /* 스크롤바 색상 (hover 상태) */
-  }
-  
-  /* 제목 및 수정 아이콘 */
-  .bottomContent h3 {
+    max-height: calc(100% - 40px);
+    /* 하단 바 내에서 스크롤 가능한 최대 높이 */
+    overflow-y: auto;
+    /* 세로 스크롤 활성화 */
+}
+
+/* 스크롤바 스타일 (선택 사항) */
+.bottomContent::-webkit-scrollbar {
+    width: 8px;
+    /* 스크롤바 너비 */
+}
+
+.bottomContent::-webkit-scrollbar-thumb {
+    background: #5b5b58;
+    /* 스크롤바 색상 */
+    border-radius: 4px;
+    /* 스크롤바 둥근 모서리 */
+}
+
+.bottomContent::-webkit-scrollbar-thumb:hover {
+    background: #777777;
+    /* 스크롤바 색상 (hover 상태) */
+}
+
+/* 제목 및 수정 아이콘 */
+.bottomContent h3 {
     font-size: 16px;
     margin-bottom: 10px;
     color: #aaaaaa;
@@ -197,35 +220,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  
-  .editIcon {
+}
+
+.editIcon {
     color: #5b5b58;
     cursor: pointer;
-  }
-  
-  /* 목표 리스트 */
-  .goalList {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .goalList li {
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-  
-  .completedGoalIcon {
-    color: #f2ff62;
-  }
-  
-  .incompleteGoalIcon {
-    color: #4a4a4a;
-  }
-  
+}
 
 .editIcon {
     color: #5b5b58;
@@ -248,44 +248,12 @@
     margin-bottom: 20px;
 }
 
-.progressText {
-    font-size: 12px;
-    color: #aaaaaa;
-}
-
-.progressBar {
-    flex: 1;
-    height: 6px;
-    background-color: #4a4a4a;
-    border-radius: 3px;
-    position: relative;
-    overflow: hidden;
-}
-
 .progressFill {
     height: 100%;
-    width: 30%; /* 진행률에 따라 조정 */
+    width: 30%;
     background-color: #f2ff62;
     border-radius: 3px;
     box-shadow: 0px 0px 5px rgba(242, 255, 98, 0.8);
-}
-
-/* 목록 스타일 */
-.goalList {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 15px; /* 요소 간격 */
-}
-
-.goalList li {
-    font-size: 14px;
-    color: #cccccc;
-    display: flex;
-    align-items: center;
-    gap: 10px;
 }
 
 /* 완료된 목표 스타일 */
@@ -309,7 +277,8 @@
 .progressContainer {
     display: flex;
     align-items: center;
-    gap: 10px; /* 진행률 바와 텍스트 사이 간격 */
+    gap: 10px;
+    /* 진행률 바와 텍스트 사이 간격 */
     margin-bottom: 20px;
 }
 
@@ -329,13 +298,17 @@
 
 .progressBar .progress {
     height: 100%;
-    width: 30%; /* 진행률 */
+    width: 30%;
+    /* 진행률 */
     background-color: #f2ff62;
     border-radius: 3px;
 }
 
 /* 목표 목록 */
 .goalList {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -347,7 +320,8 @@
     font-weight: bold;
     font-size: 14px;
     color: #cccccc;
-    margin-bottom: 15px; /* 항목 간격 추가 */
+    margin-bottom: 15px;
+    /* 항목 간격 추가 */
 }
 
 /* 완료된 별 스타일 */
@@ -373,14 +347,6 @@
     stroke: #F2FF62;
 }
 
-
-
-
-
-
-
-
-
 .starContainer {
     display: flex;
     justify-content: space-around;
@@ -389,7 +355,8 @@
 
 .star {
     cursor: pointer;
-    transition: color 0.3s ease; /* 클릭 시 색상 변화 부드럽게 */
+    transition: color 0.3s ease;
+    /* 클릭 시 색상 변화 부드럽게 */
 }
 
 .per > p {
@@ -404,11 +371,9 @@
 }
 
 .perline div {
-    transition: width 0.3s ease; /* 진행률 바 애니메이션 */
+    transition: width 0.3s ease;
+    /* 진행률 바 애니메이션 */
 }
-
-
-
 
 .clickedStar {
     width: 15px;
@@ -416,12 +381,12 @@
     margin-left: 13px;
     filter: drop-shadow(0 0 10px #f2ff62);
 }
+
 .unclickedStar {
     width: 15px;
     margin: 10px 0;
     margin-left: 13px;
 }
-
 
 .gooal {
     list-style: none;
@@ -438,10 +403,12 @@
     position: relative;
 }
 
-.clickedStarS, .unclickedStarS{
+.clickedStarS,
+.unclickedStarS {
     width: 30px;
     height: 30px;
 }
+
 .clickedStarS {
     filter: drop-shadow(0 0 10px #f2ff62);
 }
@@ -451,57 +418,54 @@
     z-index: 10;
     top: 305px;
     left: 80px;
-  }
+}
 
 :global(#star-2) {
     position: absolute;
     z-index: 10;
     top: 330px;
     left: -35px;
-  }
+}
 
 :global(#star-3) {
     position: absolute;
     z-index: 10;
     top: 142px;
     left: -78px;
-  }
+}
 
 :global(#star-4) {
     position: absolute;
     z-index: 10;
     top: 0;
     left: -80px;
-  }
+}
 
 :global(#star-5) {
     position: absolute;
     z-index: 10;
     top: 25px;
     left: 3px;
-  }
+}
 
 :global(#star-6) {
     position: absolute;
     z-index: 10;
     top: 127px;
     left: -60px;
-  }
+}
 
 :global(#star-7) {
     position: absolute;
     z-index: 10;
     top: 210px;
     left: -48px;
-  }
+}
 
-
-  .perlineShadow {
+.perlineShadow {
     box-shadow: 0 0 15px #f2ff62;
-  }
+}
 
-
-  
 .finish {
     position: fixed;
     z-index: 10;
@@ -515,6 +479,7 @@
     width: 273px;
     height: 345px;
 }
+
 .finishheader {
     width: 100%;
     height: 47px;
@@ -526,23 +491,24 @@
     padding-right: 15px;
     margin-bottom: 15px;
 }
+
 .finishstar {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 7px;
 }
+
 .finishmessage {
     font-size: 16px;
 }
-.finishmessage > span {
+
+.finishmessage>span {
     color: rgba(238, 255, 37, 91%);
 }
+
 .finishImg {
     width: 180px;
 }
-
-
-
 
 .box {
     width: 100%;
