@@ -136,6 +136,18 @@ function Mainpage() {
             <FaStar size={14} className={MainpageStyle.incompleteGoalIcon} />
             저녁은 6시 전에 먹기
         </li>
+        <li>
+            <FaStar size={14} className={MainpageStyle.incompleteGoalIcon} />
+            6시 이후 금식
+        </li>
+        <li>
+            <FaStar size={14} className={MainpageStyle.incompleteGoalIcon} />
+            밥 먹기 전에 물 마시기
+        </li>
+        <li>
+            <FaStar size={14} className={MainpageStyle.incompleteGoalIcon} />
+            자기 전에 스쿼트 10개
+        </li>
     </ul>
                 </div>
                 </div>
