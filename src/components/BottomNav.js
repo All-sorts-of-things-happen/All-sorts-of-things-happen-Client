@@ -13,7 +13,7 @@ function BottomNav() {
                         </Link>
                     </li>
                     <li>
-                        <Link to="/">
+                        <Link to="/Mainpage">
                             <img src="/images/star.png" alt="Star" className={BottomNavStyle.bottomNavImg}/>
                         </Link>
                     </li>
