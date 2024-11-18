@@ -29,6 +29,7 @@
     flex-direction: column;
     align-items: center;
     transition: all 0.3s ease;
+    /* display: none; */
 }
 
 .starName {
@@ -515,4 +516,123 @@
     height: 40px;
     position: fixed;
     bottom: 0;
+}
+
+
+.setStar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+}
+.longGoalP {
+    width: 322px;
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+.longGoal {
+    width: 322px;
+    height: auto;
+    background-color: #4A4A4A;
+    border-radius: 20px;
+    padding: 12px 10px;
+}
+.longGoal > input {
+    all: unset;
+    border: none;
+    width: 282px;
+    height: 50px;
+    background-color: #4A4A4A;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 0 10px;
+}
+
+.shortGoalP {
+    width: 322px;
+    font-size: 18px;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+.shortGoal {
+    width: 322px;
+    height: 400px;
+    background-color: #4A4A4A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    border: 15px solid #4A4A4A;
+    border: 15px 0;
+    overflow-y: scroll;
+    border-radius: 20px;
+}
+.shortGoal::-webkit-scrollbar {
+    display: none; 
+}
+.shortGoal > div {
+    height: 50px;
+    width: 90%;
+    display: grid;
+    place-items: center;
+    background-color: #4A4A4A;
+    border-radius: 10px;
+}
+.shortGoal input {
+    all: unset;
+    border: none;
+    width: 93%;
+    height: 50px;
+    font-size: 18px;
+    background-color: #4A4A4A;
+}
+.checkbox {
+    width: 322px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+.select {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+}
+.selectP {
+    font-size: 20px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.selectStarContainer {
+    width: 322px;
+    height: 600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow-y: scroll;
+}
+.selectStarContainer::-webkit-scrollbar {
+    display: none; 
+}
+.selectStarContainer article {
+    place-items: center;
+}
+.selectStarContainer img {
+    width: 150px;
+    height: 193px;
+}
+.selectStarContainer p {
+    font-size: 15px;
+    margin-top: 8px;
+    margin-bottom: 45px;
+    background-color: rgb(75, 75, 75);
+    width: 100px;
+    height: 35px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
 }
