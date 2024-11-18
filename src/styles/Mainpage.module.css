@@ -73,7 +73,7 @@
     background-color: #F2FF62;
 }
 
-.starContainer {
+.starContainer, .starContainer2 {
     position: relative;
     margin-top: 30px;
     width: 344px;
@@ -348,10 +348,14 @@
     stroke: #F2FF62;
 }
 
-.starContainer {
+.starContainer, .starContainer2 {
     display: flex;
     justify-content: space-around;
     margin-top: 20px;
+}
+
+.starContainer2 {
+    display: none;
 }
 
 .star {
@@ -461,6 +465,55 @@
     z-index: 10;
     top: 210px;
     left: -48px;
+}
+
+:global(#star-11) {
+    position: absolute;
+    z-index: 10;
+    top: 370px;
+    left: 20px;
+}
+
+:global(#star-12) {
+    position: absolute;
+    z-index: 10;
+    top: 220px;
+    left: 4px;
+}
+
+:global(#star-13) {
+    position: absolute;
+    z-index: 10;
+    top: 150px;
+    left: -50px;
+}
+
+:global(#star-14) {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: -125px;
+}
+
+:global(#star-15) {
+    position: absolute;
+    z-index: 10;
+    top: 137px;
+    left: -103px;
+}
+
+:global(#star-16) {
+    position: absolute;
+    z-index: 10;
+    top: 180px;
+    left: -135px;
+}
+
+:global(#star-17) {
+    position: absolute;
+    z-index: 10;
+    top: 335px;
+    left: -110px;
 }
 
 .perlineShadow {

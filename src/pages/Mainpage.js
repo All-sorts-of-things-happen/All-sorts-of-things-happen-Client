@@ -7,7 +7,7 @@ import { FiEdit } from "react-icons/fi";
 import { FaCirclePlus } from "react-icons/fa6";
 import goalsData from "../json/goalList.json"; // JSON 파일을 import
 import allGoals from "../json/allGoals.json"
-import { FaCheckCircle } from "react-icons/fa";
+import { FaCircleCheck } from "react-icons/fa6";
 import completedGoals from '../json/completedGoals.json';
 
 
@@ -22,7 +22,7 @@ function Mainpage() {
 
     const [isFinishVisible, setIsFinishVisible] = useState(false);
     const [inputs, setInputs] = useState([""]);
-    const [longTermGoal, setLongTermGoal] = useState(""); 
+    const [longTermGoal, setLongTermGoal] = useState("");
 
     // 터치 및 마우스 드래그 시작
     const handleDragStart = (event) => {
@@ -74,6 +74,8 @@ function Mainpage() {
     const mainRef = useRef(null);
     const setMainRef = useRef(null);
     const selectRef = useRef(null);
+    const starContainerRef = useRef(null);
+    const starContainer2Ref = useRef(null);
 
     const handleCompleteEvent = () => {
         if (perlineRef.current) {
@@ -99,8 +101,8 @@ function Mainpage() {
         setProgress(0);
         completedGoals.completedGoal.unshift(
             {
-                "img-src" : "/images/stardic.png",
-                "goal" : "살 5kg 감량"
+                "img-src": "/images/stardic.png",
+                "goal": "살 5kg 감량"
             }
         );
         setMainRef.current.style.display = 'flex';
@@ -127,6 +129,8 @@ function Mainpage() {
     const selectStar = (e) => {
         setMainRef.current.style.display = 'none';
         selectRef.current.style.display = 'flex';
+        starContainerRef.current.style.display = 'none';
+        starContainer2Ref.current.style.display = 'flex';
         allGoals.allGoal.unshift(goalsData.longTermGoal);
     }
     const final = (e) => {
@@ -157,9 +161,8 @@ function Mainpage() {
                     ></div>
                 </div></section>
 
-
-
-                <section className={MainpageStyle.starContainer}>
+                {/* 천칭자리 */}
+                <section className={MainpageStyle.starContainer} ref={starContainerRef}>
                     {/* 별 이미지 리스트 */}
                     {starClicked.map((clicked, index) => (
                         <div
@@ -201,7 +204,7 @@ function Mainpage() {
                     </div>
 
                     {/* 천칭자리 */}
-                    {/* <svg width="100%" height="100%" viewBox="0 0 344 405" className={MainpageStyle.lineContainer}>
+                    <svg width="100%" height="100%" viewBox="0 0 344 405" className={MainpageStyle.lineContainer}>
                         <line
                             x1="14.825581395348838%"
                             y1="89.38271604938272%"
@@ -265,74 +268,120 @@ function Mainpage() {
                             strokeWidth="2"
                             className={MainpageStyle.line7}
                         />
-                    </svg> */}
+                    </svg>
 
-                    {/* 게자리 */}
+
+                </section>
+
+                <section className={MainpageStyle.starContainer2} ref={starContainer2Ref}>
+                    {/* 별 이미지 리스트 */}
+                    {starClicked.map((clicked, index) => (
+                        <div
+                            key={index}
+                            onClick={() => handleStarClick(index)} // 클릭 이벤트 연결
+                            className={MainpageStyle.starWrapper}
+                            style={{
+                                margin: `${10 * index}px auto`, // margin을 index에 따라 조정 가능
+                            }}
+                        >
+                            {clicked ? (
+                                // 클릭된 별 이미지
+                                <img
+                                    src="/images/클릭된 별.png" // 클릭된 별 이미지 경로
+                                    alt={`클릭된 별 ${index + 1}`}
+                                    className={MainpageStyle.clickedStarS}
+                                    id={`star-${index + 11}`}
+                                />
+                            ) : (
+                                // 클릭되지 않은 별 이미지
+                                <img
+                                    src="/images/안 반짝1.png" // 클릭되지 않은 별 이미지 경로
+                                    alt={`클릭되지 않은 별 ${index + 1}`}
+                                    className={MainpageStyle.unclickedStarS}
+                                    id={`star-${index + 11}`}
+                                />
+                            )}
+
+                        </div>
+                    ))}
+
+                    {/* 진행 중 텍스트 */}
+                    <div className={MainpageStyle.now}
+                        style={{
+                            opacity: '0'
+                        }}>
+                        <div className={MainpageStyle.nowunder}></div>
+                        <p className={MainpageStyle.nowp}>진행 중</p>
+                    </div>
+
+                    {/* 천칭자리 */}
                     <svg width="100%" height="100%" viewBox="0 0 344 405" className={MainpageStyle.lineContainer}>
                         <line
-                            x1="10%"
-                            y1="100%"
-                            x2="20%"
-                            y2="65%"
+                            x1="18%"
+                            y1="95%"
+                            x2="28%"
+                            y2="60%"
                             stroke="#F2FF62"
                             strokeWidth="2"
                             className={MainpageStyle.line1}
                         />
                         <line
-                            x1="20%"
-                            y1="65%"
-                            x2="19%"
-                            y2="40%"
+                            x1="28%"
+                            y1="60%"
+                            x2="27%"
+                            y2="45%"
                             stroke="#F2FF62"
                             strokeWidth="2"
                             className={MainpageStyle.line2}
                         />
                         <line
-                            x1="18.313953488372093%"
-                            y1="44.69135802469136%"
-                            x2="33.43023255813954%"
-                            y2="10.37037037037037%"
+                            x1="27%"
+                            y1="45%"
+                            x2="20%"
+                            y2="10%"
                             stroke="#F2FF62"
                             strokeWidth="2"
                             className={MainpageStyle.line3}
                         />
                         <line
-                            x1="33.43023255813954%"
-                            y1="10.37037037037037%"
-                            x2="72.96511627906976%"
-                            y2="18.765432098765434%"
+                            x1="27%"
+                            y1="45%"
+                            x2="42%"
+                            y2="47%"
                             stroke="#F2FF62"
                             strokeWidth="2"
                             className={MainpageStyle.line4}
                         />
                         <line
-                            x1="18.313953488372093%"
-                            y1="44.69135802469136%"
-                            x2="72.96511627906976%"
-                            y2="18.765432098765434%"
+                            x1="42%"
+                            y1="47%"
+                            x2="48%"
+                            y2="60%"
                             stroke="#F2FF62"
                             strokeWidth="2"
                             className={MainpageStyle.line5}
                         />
                         <line
-                            x1="68.6046511627907%"
-                            y1="47.654320987654316%"
-                            x2="72.96511627906976%"
-                            y2="18.765432098765434%"
+                            x1="28%"
+                            y1="60%"
+                            x2="48%"
+                            y2="60%"
                             stroke="#F2FF62"
                             strokeWidth="2"
                             className={MainpageStyle.line6}
                         />
                         <line
-                            x1="68.6046511627907%"
-                            y1="47.654320987654316%"
-                            x2="86.62790697674419%"
-                            y2="69.62962962962963%"
+                            x1="48%"
+                            y1="60%"
+                            x2="70%"
+                            y2="100%"
                             stroke="#F2FF62"
                             strokeWidth="2"
                             className={MainpageStyle.line7}
                         />
                     </svg>
+
+
                 </section>
 
                 <div
@@ -401,44 +450,44 @@ function Mainpage() {
                 <p className={MainpageStyle.shortGoalP}>단기목표</p>
                 <div className={MainpageStyle.shortGoal}>
                     {inputs.map((input, index) => (
-                    <div key={index}>
-                        <input
-                            type="text"
-                            value={input} // 해당 인덱스의 값 사용
-                            placeholder="단기목표를 입력하세요"
-                            onChange={(e) => handleInputChange(index, e.target.value)} // 내용 변경 이벤트
-                        />
-                    </div>
-                ))}
+                        <div key={index}>
+                            <input
+                                type="text"
+                                value={input} // 해당 인덱스의 값 사용
+                                placeholder="단기목표를 입력하세요"
+                                onChange={(e) => handleInputChange(index, e.target.value)} // 내용 변경 이벤트
+                            />
+                        </div>
+                    ))}
                 </div>
-                <div  className={MainpageStyle.checkbox}>
-                    <FaCirclePlus size={50} color="#F2FF62" onClick={addInput} style={{marginRight:'30px'}}/>
-                    <FaCheckCircle size={50} color="#F2FF62" onClick={selectStar}/>
+                <div className={MainpageStyle.checkbox}>
+                    <FaCirclePlus size={50} color="#F2FF62" onClick={addInput} style={{ marginRight: '30px' }} />
+                    <FaCircleCheck size={50} color="#F2FF62" onClick={selectStar} />
                 </div>
             </main>
-            
+
 
             <main className={MainpageStyle.select} ref={selectRef}>
                 <p className={MainpageStyle.selectP}>별자리 선택하기</p>
                 <div className={MainpageStyle.selectStarContainer}>
                     <article onClick={final}>
-                        <img src="/images/게자리.png"/>
+                        <img src="/images/게자리.png" />
                         <p>게자리</p>
                     </article>
                     <article onClick={final}>
-                        <img src="/images/양자리.png"/>
+                        <img src="/images/양자리.png" />
                         <p>양자리</p>
                     </article>
                     <article onClick={final}>
-                        <img src="/images/백조자리.png"/>
+                        <img src="/images/백조자리.png" />
                         <p>백조자리</p>
                     </article>
                     <article onClick={final}>
-                        <img src="/images/하프자리.png"/>
+                        <img src="/images/하프자리.png" />
                         <p>하프자리</p>
                     </article>
                     <article onClick={final}>
-                        <img src="/images/세페우스자리.png"/>
+                        <img src="/images/세페우스자리.png" />
                         <p>세페우스자리</p>
                     </article>
                 </div>
