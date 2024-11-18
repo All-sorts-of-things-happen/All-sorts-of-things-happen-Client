@@ -2,10 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import LoginStyle from '../styles/Login.module.css';
-import LoginButton from '../pages/Google';
-import { clientId } from '../pages/config';  // clientId 가져오기
+import Google from '../pages/Google';
+import { clientId } from '../pages/config';
 
-function Login() {
+
+function Login({ onLoginSuccess }) {
     return (
         <GoogleOAuthProvider clientId={clientId}>
             <div className={LoginStyle.Login}>
@@ -17,7 +18,7 @@ function Login() {
                     <label>
                         <input name="password" placeholder="비밀번호 작성하기" />
                     </label>
-                    <Link to='/Mainpage'>
+                    <Link to="/Mainpage">
                         <button className={LoginStyle.loginBtn}>로그인</button>
                     </Link>
                 </div>
@@ -27,7 +28,7 @@ function Login() {
                     <div></div>
                 </div>
                 <div className={LoginStyle.loginGoogle}>
-                    <LoginButton /> {/* 구글 로그인 버튼 */}
+                    <Google onLoginSuccess={onLoginSuccess} /> {/* Google 컴포넌트 사용 */}
                 </div>
             </div>
         </GoogleOAuthProvider>
