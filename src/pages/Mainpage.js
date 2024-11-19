@@ -89,6 +89,16 @@ function Mainpage() {
             handleCompleteEvent(); // 진행률이 100%일 때 이벤트 호출
         }
     }, [progress]); // progress 값이 변경될 때마다 실행
+    useEffect(() => {
+        if(completedGoals.complet){
+            starContainerRef.current.style.display = 'flex';
+            starContainer2Ref.current.style.display = 'none';
+        }
+        else{
+            starContainerRef.current.style.display = 'none';
+            starContainer2Ref.current.style.display = 'flex';
+        }
+    }, []);
 
     // 다음 목표 설정ㄱㄱ
     const handleCloseClick = () => {
@@ -129,6 +139,7 @@ function Mainpage() {
     const selectStar = (e) => {
         setMainRef.current.style.display = 'none';
         selectRef.current.style.display = 'flex';
+        completedGoals.complet = false;
         starContainerRef.current.style.display = 'none';
         starContainer2Ref.current.style.display = 'flex';
         allGoals.allGoal.unshift(goalsData.longTermGoal);
@@ -314,8 +325,8 @@ function Mainpage() {
                         <p className={MainpageStyle.nowp}>진행 중</p>
                     </div>
 
-                    {/* 천칭자리 */}
-                    <svg width="100%" height="100%" viewBox="0 0 344 405" className={MainpageStyle.lineContainer}>
+                    {/* 게자리 */}
+                    <svg width="100%" height="100%" viewBox="0 0 344 405" className={MainpageStyle.lineContainer} >
                         <line
                             x1="18%"
                             y1="95%"

@@ -8,5 +8,6 @@
             "img-src" : "/images/stardic3.png",
             "goal" : "자격증 따기"
         }
-    ]
+    ],
+    "complet" : true
 }
